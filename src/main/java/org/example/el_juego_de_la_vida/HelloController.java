@@ -18,6 +18,8 @@ public class HelloController {
     @FXML
     private void showConfiguracion() {
         try {
+            Stage helloStage = (Stage) welcomeText.getScene().getWindow();
+            helloStage.close();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/el_juego_de_la_vida/Configuracion.fxml"));
             Parent root = loader.load();
             Stage configuracion = new Stage();
