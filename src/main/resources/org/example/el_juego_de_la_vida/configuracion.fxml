@@ -12,10 +12,11 @@
             <content>
               <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="560.0">
                      <children>
-                        <Slider layoutX="131.0" layoutY="25.0" majorTickUnit="1.0" max="10.0" prefHeight="200.0" prefWidth="400.0" showTickLabels="true" showTickMarks="true" AnchorPane.topAnchor="25.0" />
-                        <Slider layoutX="129.0" layoutY="134.0" majorTickUnit="1.0" max="10.0" prefHeight="160.0" prefWidth="402.0" showTickLabels="true" showTickMarks="true" />
-                        <Label layoutX="100.0" layoutY="107.0" text="M" />
-                        <Label layoutX="101.0" layoutY="196.0" text="N" />
+                        <Slider layoutX="94.0" layoutY="14.0" majorTickUnit="1.0" max="10.0" prefHeight="193.0" prefWidth="371.0" showTickLabels="true" showTickMarks="true" AnchorPane.topAnchor="14.0" />
+                        <Slider layoutX="93.0" layoutY="132.0" majorTickUnit="1.0" max="10.0" prefHeight="143.0" prefWidth="373.0" showTickLabels="true" showTickMarks="true" />
+                        <Label layoutX="54.0" layoutY="89.0" text="M" />
+                        <Label layoutX="55.0" layoutY="186.0" text="N" />
+                        <Label fx:id="configuracion" layoutX="210.0" layoutY="34.0" prefHeight="18.0" prefWidth="139.0" text="Dimensiones del tablero" />
                      </children></AnchorPane>
             </content>
           </Tab>

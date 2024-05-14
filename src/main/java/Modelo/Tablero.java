@@ -35,4 +35,9 @@ public class Tablero {
             }
         }
     }
+    public Celda getCelda(int M,int N){
+        for(int i = 0; i < matriz.getNumElementos(); i++){
+            Celda celdaActual = (Celda) matriz.getElemento(i).getData();
+    }
+}
 
