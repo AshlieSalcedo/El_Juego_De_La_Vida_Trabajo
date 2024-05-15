@@ -34,5 +34,20 @@ public class Celda {
         return resultado;
     }
 
+    public int getPosN() {
+        return posN;
+    }
+
+    public int getPosM() {
+        return posM;
+    }
+
+    public ListaEnlazada getListaRecursos() {
+        return listaRecursos;
+    }
+
+    public ListaEnlazada getListaIndividuos() {
+        return listaIndividuos;
+    }
 }
 

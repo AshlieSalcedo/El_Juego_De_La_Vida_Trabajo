@@ -16,6 +16,7 @@ public class IndividuoBasico extends Individuo{
         int siguienteN;
         siguienteM = random.nextInt(-1,1);
         siguienteN = random.nextInt(-1,1);
+        return Tablero.getCelda(siguienteM,siguienteN);
 
     }
 }

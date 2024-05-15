@@ -3,10 +3,10 @@ package Modelo;
 import Estructuras.ListaEnlazada;
 
 public class Tablero {
-    int N;
-    int M;
-    ListaEnlazada listaIndividuos;
-    ListaEnlazada matriz;
+    private int N;
+    private int M;
+    private ListaEnlazada listaIndividuos;
+    static ListaEnlazada matriz;
     public Tablero(int N, int M) {
         this.N = N;
         this.M = M;
@@ -32,12 +32,21 @@ public class Tablero {
                 listaIndividuos.del(i);
             }
             //upDateLog
-            }
         }
     }
-    public Celda getCelda(int M,int N){
-        for(int i = 0; i < matriz.getNumElementos(); i++){
-            Celda celdaActual = (Celda) matriz.getElemento(i).getData();
+    public static Celda getCelda(int M,int N){
+        boolean encontrado = false;
+        Celda celdaActual = null;
+        for(int i = 0; i < matriz.getNumeroElementos() && !encontrado; i++){
+            celdaActual = (Celda) matriz.getElemento(i).getData();
+            if (celdaActual.getPosM()==M && celdaActual.getPosN()==N){
+                encontrado = true;
+            }
+        }
+        return celdaActual;
+    }
+    public void bucleControl(){
+
     }
 }
 

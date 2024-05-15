@@ -19,6 +19,6 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <Label layoutX="240.0" layoutY="14.0" prefHeight="17.0" prefWidth="126.0" text="EL JUEGO DE LA VIDA" />
+      <Label layoutX="240.0" layoutY="14.0" prefHeight="17.0" prefWidth="126.0" fx:id="TitleText" text="EL JUEGO DE LA VIDA" />
    </children>
 </Pane>

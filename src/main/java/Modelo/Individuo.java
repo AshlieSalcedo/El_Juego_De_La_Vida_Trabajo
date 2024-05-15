@@ -34,7 +34,12 @@ public abstract class Individuo {
         Celda celdaSiguiente = calcularRuta(matriz);
         int resultado = celdaSiguiente.realizarMovimientos(this);
         return resultado;
-
+    }
+    public Celda calcularRuta(ListaEnlazada matriz){
+        return null;
+    }
+    public void upDateVida(){
+        this.turnoVida--;
     }
 
 

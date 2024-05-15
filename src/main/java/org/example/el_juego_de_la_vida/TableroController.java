@@ -3,12 +3,15 @@ package org.example.el_juego_de_la_vida;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class TableroController {
+    @FXML
+    private Label TitleText;
 
     @FXML
     private void onPauseButtonClick() {
@@ -30,7 +33,10 @@ public class TableroController {
                 alert.close();
             } else if (buttonType == configuracionButton) {
                 // Cerramos el cuadro de diálogo y abrimos la ventana de configuración
+                Stage TableroStage = (Stage) TitleText.getScene().getWindow();
+                TableroStage.close();
                 alert.close();
+
                 openConfiguracionWindow();
             }
         });
