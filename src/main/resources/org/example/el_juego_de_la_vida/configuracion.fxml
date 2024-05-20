@@ -1,61 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.el_juego_de_la_vida.ConfiguracionController">
-   <children>
-      <TabPane prefHeight="401.0" prefWidth="540.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Tablero">
-            <content>
-              <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="560.0">
-                     <children>
-                        <Slider layoutX="94.0" layoutY="14.0" majorTickUnit="1.0" max="10.0" prefHeight="193.0" prefWidth="371.0" showTickLabels="true" showTickMarks="true" AnchorPane.topAnchor="14.0" />
-                        <Slider layoutX="93.0" layoutY="132.0" majorTickUnit="1.0" max="10.0" prefHeight="143.0" prefWidth="373.0" showTickLabels="true" showTickMarks="true" />
-                        <Label layoutX="54.0" layoutY="89.0" text="M" />
-                        <Label layoutX="55.0" layoutY="186.0" text="N" />
-                        <Label fx:id="configuracion" layoutX="210.0" layoutY="34.0" prefHeight="18.0" prefWidth="139.0" text="Dimensiones del tablero" />
-                     </children></AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Individuos">
-            <content>
-              <AnchorPane>
-                     <children>
-                        <Slider layoutX="166.0" layoutY="67.0" majorTickUnit="1.0" max="10.0" prefHeight="68.0" prefWidth="251.0" showTickLabels="true" showTickMarks="true" />
-                        <Slider layoutX="166.0" layoutY="122.0" majorTickUnit="1.0" max="10.0" prefHeight="81.0" prefWidth="251.0" showTickLabels="true" showTickMarks="true" />
-                        <Slider layoutX="167.0" layoutY="194.0" majorTickUnit="1.0" max="10.0" prefHeight="67.0" prefWidth="252.0" showTickLabels="true" showTickMarks="true" />
-                        <Label layoutX="97.0" layoutY="84.0" prefHeight="18.0" prefWidth="49.0" text="Turnos" />
-                        <Label layoutX="79.0" layoutY="146.0" prefHeight="18.0" prefWidth="76.0" text="Reproducción" />
-                        <Label layoutX="89.0" layoutY="204.0" prefHeight="18.0" prefWidth="65.0" text="Clonado" />
-                     </children></AnchorPane>
-            </content>
-          </Tab>
-            <Tab text="Recursos">
-               <content>
-                  <AnchorPane prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <VBox alignment="BOTTOM_RIGHT" layoutX="501.0" layoutY="323.0" spacing="20.0">
-                           <opaqueInsets>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </opaqueInsets>
-                           <padding>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </padding>
-                        </VBox>
-                        <Button alignment="BOTTOM_RIGHT" layoutX="475.0" layoutY="292.0" mnemonicParsing="false" onAction="#onIniciarButtonClick" prefHeight="26.0" prefWidth="57.0" text="Iniciar " />
-                     </children>
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding></AnchorPane>
-               </content>
-            </Tab>
-        </tabs>
-      </TabPane>
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
+    <children>
+        <TabPane prefHeight="401.0" prefWidth="540.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Tablero">
+                    <content>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="560.0">
+                            <children>
+                                <Slider fx:id="sliderN" layoutX="94.0" layoutY="14.0" majorTickUnit="1.0" max="10.0" min="1.0" minorTickCount="0" prefHeight="193.0" prefWidth="371.0" showTickLabels="true" showTickMarks="true" />
+                                <Slider fx:id="sliderM" blockIncrement="1.0" layoutX="93.0" layoutY="132.0" majorTickUnit="1.0" max="10.0" min="1.0" minorTickCount="0" prefHeight="143.0" prefWidth="373.0" showTickLabels="true" showTickMarks="true" />
+                                <Label layoutX="54.0" layoutY="89.0" text="M" />
+                                <Label layoutX="55.0" layoutY="186.0" text="N" />
+                                <Label fx:id="configuracion" layoutX="210.0" layoutY="34.0" prefHeight="18.0" prefWidth="139.0" text="Dimensiones del tablero" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <!-- Otros tabs -->
+                <Tab text="Recursos">
+                    <content>
+                        <AnchorPane prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Button alignment="BOTTOM_RIGHT" layoutX="475.0" layoutY="292.0" mnemonicParsing="false" onAction="#onIniciarButtonClick" prefHeight="26.0" prefWidth="57.0" text="Iniciar " />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
 </VBox>

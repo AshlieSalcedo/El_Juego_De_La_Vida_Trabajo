@@ -8,7 +8,7 @@ public class IndividuoBasico extends Individuo{
     public IndividuoBasico(int ID, int posN, int posM, double reproduccion, double clon) {
         super(ID, posN, posM, reproduccion, clon);
     }
-    public Celda calcularRuta(ListaEnlazada matriz){
+    public Casilla calcularRuta(ListaEnlazada matriz){
         int M = this.getPosM();
         int N = this.getPosN();
         Random random = new Random();

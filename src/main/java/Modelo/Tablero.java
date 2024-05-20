@@ -17,8 +17,8 @@ public class Tablero {
     public void crearTablero(){
         for (int i = 0; i<N; i++){
             for (int j = 0; i<M; j++){
-                Celda celda = new Celda(i,j);
-                matriz.add(celda);
+                Casilla casilla = new Casilla(i,j);
+                matriz.add(casilla);
             }
         }
     }
@@ -34,16 +34,16 @@ public class Tablero {
             //upDateLog
         }
     }
-    public static Celda getCelda(int M,int N){
+    public static Casilla getCelda(int M, int N){
         boolean encontrado = false;
-        Celda celdaActual = null;
+        Casilla casillaActual = null;
         for(int i = 0; i < matriz.getNumeroElementos() && !encontrado; i++){
-            celdaActual = (Celda) matriz.getElemento(i).getData();
-            if (celdaActual.getPosM()==M && celdaActual.getPosN()==N){
+            casillaActual = (Casilla) matriz.getElemento(i).getData();
+            if (casillaActual.getPosM()==M && casillaActual.getPosN()==N){
                 encontrado = true;
             }
         }
-        return celdaActual;
+        return casillaActual;
     }
     public void bucleControl(){
 

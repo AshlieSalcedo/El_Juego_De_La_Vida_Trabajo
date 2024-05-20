@@ -31,11 +31,11 @@ public abstract class Individuo {
         return resultado;
     }
     public int mover(ListaEnlazada matriz){
-        Celda celdaSiguiente = calcularRuta(matriz);
-        int resultado = celdaSiguiente.realizarMovimientos(this);
+        Casilla casillaSiguiente = calcularRuta(matriz);
+        int resultado = casillaSiguiente.realizarMovimientos(this);
         return resultado;
     }
-    public Celda calcularRuta(ListaEnlazada matriz){
+    public Casilla calcularRuta(ListaEnlazada matriz){
         return null;
     }
     public void upDateVida(){

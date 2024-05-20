@@ -1,15 +1,14 @@
 package Modelo;
 
-import Estructuras.ElementoLE;
 import Estructuras.ListaEnlazada;
 
-public class Celda {
+public class Casilla {
     private int posN;
     private int posM;
     private ListaEnlazada listaRecursos;
     private ListaEnlazada listaIndividuos;
 
-    public Celda(int posN, int posM) {
+    public Casilla(int posN, int posM) {
         this.posN = posN;
         this.posM = posM;
         this.listaRecursos = new ListaEnlazada();
