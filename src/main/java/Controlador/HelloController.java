@@ -1,4 +1,4 @@
-package org.example.el_juego_de_la_vida;
+package Controlador;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +20,7 @@ public class HelloController {
         try {
             Stage helloStage = (Stage) welcomeText.getScene().getWindow();
             helloStage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/el_juego_de_la_vida/Configuracion.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Controlador/configuracion.fxml"));
             Parent root = loader.load();
             Stage configuracion = new Stage();
             configuracion.setTitle("Configuración");

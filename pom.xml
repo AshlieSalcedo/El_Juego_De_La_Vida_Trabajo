@@ -70,7 +70,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                org.example.el_juego_de_la_vida/org.example.el_juego_de_la_vida.HelloApplication
+                                org.example.el_juego_de_la_vida/Controlador.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

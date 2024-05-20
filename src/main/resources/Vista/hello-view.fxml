@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.HelloController">
+   <children>
+      <ImageView fitHeight="294.0" fitWidth="310.0">
+         <image>
+            <Image url="@../../../Images/intro.jpg" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" prefHeight="294.0" prefWidth="310.0" spacing="20.0">
+          <padding>
+              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+
+          <Label fx:id="welcomeText" prefHeight="40.0" prefWidth="154.0" text="Menú Principal" textFill="#fff6f6">
+            <font>
+               <Font size="23.0" />
+            </font>
+            <effect>
+               <SepiaTone />
+            </effect></Label>
+          <Button onAction="#onHelloButtonClick" prefHeight="31.0" prefWidth="102.0" text="Juego Nuevo">
+            <font>
+               <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+            </font>
+         </Button>
+         <Button mnemonicParsing="false" text="Cargar Juego">
+            <font>
+               <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+            </font>
+         </Button>
+      </VBox>
+   </children>
+</AnchorPane>

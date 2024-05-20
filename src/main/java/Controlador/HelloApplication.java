@@ -1,4 +1,4 @@
-package org.example.el_juego_de_la_vida;
+package Controlador;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

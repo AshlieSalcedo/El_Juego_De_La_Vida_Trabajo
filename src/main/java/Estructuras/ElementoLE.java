@@ -1,23 +1,23 @@
 package Estructuras;
 
-public class ElementoLE {
-    private ElementoLE siguiente;
+public class ElementoLE<Object> {
+    private ElementoLE<Object> siguiente;
     private Object data;
 
     public ElementoLE() {
     }
 
-    public ElementoLE(ElementoLE siguiente, Object data) {
+    public ElementoLE(ElementoLE<Object> siguiente, Object data) {
         this.siguiente = siguiente;
         this.data = data;
     }
 
-    void insertarmeEn(ElementoLE el){//metodo privado según UMl (Hemos puesto como público)
+    void insertarmeEn(ElementoLE<Object> el){//metodo privado según UMl (Hemos puesto como público)
         el.siguiente = this.siguiente;//??
         this.siguiente = el;
     }
 
-    ElementoLE getSiguiente(){//metodo privado según UMl (Hemos puesto como público)
+    ElementoLE<Object> getSiguiente(){//metodo privado según UMl (Hemos puesto como público)
         return siguiente;
 
     }

@@ -5,6 +5,6 @@ module org.example.el_juego_de_la_vida {
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
 
-    opens org.example.el_juego_de_la_vida to javafx.fxml;
-    exports org.example.el_juego_de_la_vida;
+    opens Controlador to javafx.fxml;
+    exports Controlador;
 }
