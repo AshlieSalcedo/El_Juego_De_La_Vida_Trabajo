@@ -41,9 +41,9 @@ public class TableroController {
             for (int col = 0; col < cols; col++) {
                 Rectangle rect = new Rectangle(30, 30);
                 if ((row + col) % 2 == 0) {
-                    rect.setFill(Color.LIGHTBLUE);  // Azul claro
+                    rect.setFill(Color.AQUA);  // Azul claro
                 } else {
-                    rect.setFill(Color.BLUE);  // Azul
+                    rect.setFill(Color.AZURE);  // Azul
                 }
                 rect.widthProperty().bind(gridPaneTablero.widthProperty().divide(cols));
                 rect.heightProperty().bind(gridPaneTablero.heightProperty().divide(rows));
