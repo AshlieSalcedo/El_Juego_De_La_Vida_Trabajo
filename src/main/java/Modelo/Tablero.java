@@ -1,6 +1,7 @@
 package Modelo;
 
 import Estructuras.Enlazada.ListaEnlazada;
+import Recurso.*;
 
 public class Tablero {
     private boolean enPausa;
@@ -122,10 +123,23 @@ public class Tablero {
         Casilla casilla = (Casilla) matriz.getElemento(indice).getData();
         int numElementos = casilla.getListaRecursos().getNumeroElementos();
         for (int i = 0; i<numElementos; i++){
+            Recurso recurso = (Recurso) casilla.getListaRecursos().getElemento(i).getData();
+            if (recurso.tiempoAgotado()){
+                casilla.getListaRecursos().del(i);
+            }
 
 
         }
 
+    }
+    public void revisionRecursiva(int inicio,int fin){
+        if (fin == inicio ){
+            revisarRecurso(inicio);
+        }else{
+            revisionRecursiva(inicio,fin/2);
+            revisionRecursiva(inicio/2,fin);
+
+        }
     }
 }
 

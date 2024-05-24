@@ -13,6 +13,7 @@ public abstract class Recurso {
     private int posM;
     private static int contadorID = 0;
     private int ID;
+    private int tiempoA;
     private static double probZ;
 
     public Recurso(int posN, int posM, Image imagen) {
@@ -52,4 +53,12 @@ public abstract class Recurso {
         gc.fillText(String.valueOf(ID), 5, 15); // Colocar el ID en la esquina superior izquierda
         return canvas.snapshot(new SnapshotParameters(), null);
     }
+
+    public boolean tiempoAgotado() {
+
+        return tiempoA == 0;
+
+    }
+
+
 }
