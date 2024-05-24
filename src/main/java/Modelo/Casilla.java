@@ -1,6 +1,6 @@
 package Modelo;
 
-import Estructuras.ListaEnlazada;
+import Estructuras.Enlazada.ListaEnlazada;
 
 public class Casilla {
     private int posN;

@@ -1,10 +1,12 @@
-package Estructuras;
+package Estructuras.Enlazada;
 
-public class ListaEnlazada {
-    private ElementoLE primero;
+import Estructuras.Enlazada.ElementoLE;
+
+public class ListaEnlazada<Object> {
+    private ElementoLE<Object> primero;
     public ListaEnlazada(){}
 
-    public ListaEnlazada(ElementoLE primero) {
+    public ListaEnlazada(ElementoLE<Object> primero) {
         this.primero = primero;
     }
 
@@ -15,41 +17,29 @@ public class ListaEnlazada {
 
     public void vaciar(){
         while (primero!=null){
-            ElementoLE temp = primero.getSiguiente();
+            ElementoLE<Object> temp = primero.getSiguiente();
             primero = null;
             primero = temp;
         }
     }
-    int add(ElementoLE el){
+    int add(ElementoLE<Object> el){
         if (isVacia()) {
             primero = el;
             return 1;
         }else{
-            ElementoLE ultimo = getUltimo();
+            ElementoLE<Object> ultimo = getUltimo();
             el.insertarmeEn(ultimo); //insertamos el nuevo elemento despues del ultimo
             return -1;
         }
     }
-    public void add(String s){
-        ElementoLE nuevoElementoLE = new ElementoLE();
-        nuevoElementoLE.setData(s);
-        if (primero == null) {
-            primero = nuevoElementoLE;
-        }else{
-            ElementoLE actual = primero;
-            while (actual.getSiguiente() != null) {
-                actual = actual.getSiguiente();}
-            actual.insertarmeEn(nuevoElementoLE);
-        }
 
-    }
     public void add(Object o){
-        ElementoLE nuevoElementoLE = new ElementoLE();
+        ElementoLE<Object> nuevoElementoLE = new ElementoLE<>();
         nuevoElementoLE.setData(o);
         if (primero == null) {
             primero = nuevoElementoLE;
         }else{
-            ElementoLE actual = primero;
+            ElementoLE<Object> actual = primero;
             while (actual.getSiguiente() != null) {
                 actual = actual.getSiguiente();
             }
@@ -61,7 +51,7 @@ public class ListaEnlazada {
             return 0;
         }else{
             int numElementos=1;
-            ElementoLE actual = primero;
+            ElementoLE<Object> actual = primero;
             while (actual.getSiguiente() != null){
                 actual = actual.getSiguiente();
                 numElementos++;
@@ -69,9 +59,9 @@ public class ListaEnlazada {
             return numElementos;
         }
     }
-    public int getPosicion(ElementoLE el){
+    public int getPosicion(ElementoLE<Object> el){
         int pos=0;
-        ElementoLE actual = primero;
+        ElementoLE<Object> actual = primero;
         while (actual != null) {
             if (actual == el) {
                 return pos;}
@@ -79,51 +69,25 @@ public class ListaEnlazada {
             actual = actual.getSiguiente();}
         return -1; //Se indica con -1 que el elemento no se encuentra en la lista
     }
-    public ElementoLE getPrimero(){return primero;}
+    public ElementoLE<Object> getPrimero(){return primero;}
 
-    public ElementoLE getUltimo(){
-        ElementoLE actual = primero;
+    public ElementoLE<Object> getUltimo(){
+        ElementoLE<Object> actual = primero;
         while (actual.getSiguiente() != null){
             actual = actual.getSiguiente();}
         return actual;}
-    public void insert(String s, int posicion){
-        if (posicion<0){
-            throw new IndexOutOfBoundsException("La posición indicada no es correcta");
-        } else {
-            ElementoLE nuevoElementoLE = new ElementoLE();
-            nuevoElementoLE.setData(s);
-            if (posicion == 0){
-                nuevoElementoLE.insertarmeEn(primero);
-                primero = nuevoElementoLE;
-            }else{
-                ElementoLE actual = primero;//usamos actual como puntero
-                int posicionActual = 0;
-                while(actual != null && posicionActual < posicion -1){
-                    actual = actual.getSiguiente();
-                    posicionActual++;
-                }
-                if (actual == null){
-                    throw new IllegalArgumentException("La posición buscada no se encuentra dentro de la lista ");
-                }else{
-                    nuevoElementoLE.insertarmeEn(actual.getSiguiente());
-                    actual.insertarmeEn(nuevoElementoLE);
-                }
 
-            }
-
-        }
-    }
     public void insert(Object o, int posicion){
         if (posicion<0){
             throw new IndexOutOfBoundsException("La posición indicada no es correcta");
         } else {
-            ElementoLE nuevoElementoLE = new ElementoLE();
+            ElementoLE<Object> nuevoElementoLE = new ElementoLE<>();
             nuevoElementoLE.setData(o);
             if (posicion == 0){
                 primero.insertarmeEn(nuevoElementoLE);
                 primero = nuevoElementoLE;
             }else{
-                ElementoLE actual = primero;
+                ElementoLE<Object> actual = primero;
                 int posicionActual = 0;
                 while(actual != null && posicionActual < posicion -1){
                     actual = actual.getSiguiente();
@@ -140,21 +104,21 @@ public class ListaEnlazada {
         }
     }
 
-    public ElementoLE getSiguiente(ElementoLE el){
+    public ElementoLE<Object> getSiguiente(ElementoLE<Object> el){
         return el.getSiguiente();
     }
-    public ElementoLE getElemento(int posicion){
+    public ElementoLE<Object> getElemento(int posicion){
 
         if (posicion < 0){
             return null; //no existen posiciones negativas
         }
-        ElementoLE actual = primero;
+        ElementoLE<Object> actual = primero;
         int contador = 0;
         while (actual!=null && contador < posicion){
             actual = actual.getSiguiente();
             contador++;
         }
-        if (actual == null){
+        if(actual == null){
             return null;
         }
         return actual;
@@ -163,8 +127,8 @@ public class ListaEnlazada {
         if (posicion<0 || posicion >= getNumeroElementos()){
             return 1;//No se puede eliminar un elemento de una posición que no pertenece a la lista
         }
-        ElementoLE anterior = null;
-        ElementoLE actual = primero;
+        ElementoLE<Object> anterior = null;
+        ElementoLE<Object> actual = primero;
         for(int i = 0; i < posicion-1;i++){
             anterior = actual;
             actual = actual.getSiguiente();
@@ -172,10 +136,29 @@ public class ListaEnlazada {
         if (anterior == null){//significa que se quiere eliminar el primer elemento
             primero = actual.getSiguiente();
         }else{
-            ElementoLE siguiente = actual.getSiguiente();
+            ElementoLE<Object> siguiente = actual.getSiguiente();
             siguiente.insertarmeEn(anterior);
         }
         return -1; //Se ha eliminado el elemento
 
     }
+    //método añadido para el trabajo
+    public void delObj(Object data){
+        int pos=0;
+        ElementoLE <Object> actual = primero;
+        while (actual.getData() != null) {
+            if (actual.getData() == data) {
+                del(pos);
+            } else {
+                pos++;
+                actual = actual.getSiguiente();
+            }
+        }
+    }
+    public void copiarLista(ListaEnlazada<Object> lista){
+        for ( int i = 0; i<lista.getNumeroElementos(); i++){
+            add(lista.getElemento(i));
+        }
+    }
+
 }

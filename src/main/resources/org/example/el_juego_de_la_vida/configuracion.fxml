@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.el_juego_de_la_vida.ConfiguracionController">
     <children>
-        <TabPane prefHeight="401.0" prefWidth="540.0" tabClosingPolicy="UNAVAILABLE">
+        <TabPane prefHeight="458.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
                 <Tab text="Tablero">
                     <content>
@@ -20,16 +21,119 @@
                         </AnchorPane>
                     </content>
                 </Tab>
-                <!-- Otros tabs -->
+                <Tab text="Individuo">
+                    <content>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="560.0">
+                     <children>
+                        <Label layoutX="195.0" layoutY="34.0" text="Características de los individuos" />
+                        <Label layoutX="67.0" layoutY="93.0" text="Turnos de Vida" />
+                        <Label layoutX="68.0" layoutY="146.0" text="Probabilidad de reproducción" />
+                        <Label layoutX="68.0" layoutY="203.0" text="Probabilidad de clonado" />
+                        <Slider layoutX="294.0" layoutY="95.0" majorTickUnit="1.0" max="10.0" min="1.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" />
+                        <Slider layoutX="294.0" layoutY="147.0" majorTickUnit="0.1" max="1.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" />
+                        <Slider blockIncrement="1.0" layoutX="294.0" layoutY="204.0" majorTickUnit="0.1" max="1.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" />
+                     </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
                 <Tab text="Recursos">
                     <content>
                         <AnchorPane prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="82.0" layoutY="57.0" text="Agua" />
+                        <Label layoutX="70.0" layoutY="103.0" text="Biblioteca" />
+                        <Label layoutX="76.0" layoutY="142.0" text="Comida" />
+                        <Label layoutX="73.0" layoutY="186.0" text="Montaña" />
+                        <Label layoutX="83.0" layoutY="235.0" text="Pozo" />
+                        <Label layoutX="78.0" layoutY="281.0" text="Tesoro" />
+                        <Slider fx:id="TAgua" layoutX="147.0" layoutY="58.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="PAgua" layoutX="343.0" layoutY="58.0" majorTickUnit="0.1" max="1.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" />
+                        <Label layoutX="165.0" layoutY="23.0" text="Turnos de aparición" />
+                        <Label layoutX="347.0" layoutY="23.0" text="Probabilidad de aparición" />
+                        <Slider fx:id="TBiblioteca" layoutX="147.0" layoutY="105.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="PBliblioteca" layoutX="343.0" layoutY="105.0" majorTickUnit="0.1" max="1.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="TComida" layoutX="147.0" layoutY="144.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="PComida" layoutX="345.0" layoutY="144.0" majorTickUnit="0.1" max="1.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="TMontana" layoutX="147.0" layoutY="188.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="PMontana" layoutX="345.0" layoutY="188.0" majorTickUnit="0.1" max="1.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="TPozo" layoutX="147.0" layoutY="236.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="PPozo" layoutX="345.0" layoutY="236.0" majorTickUnit="0.1" max="1.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="TTesoro" layoutX="147.0" layoutY="283.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="PTesoro" layoutX="345.0" layoutY="276.0" majorTickUnit="0.1" max="1.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" />
+                     </children></AnchorPane>
+                    </content>
+                </Tab>
+
+                <Tab text="Partida">
+                    <content>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0">
                             <children>
-                                <Button alignment="BOTTOM_RIGHT" layoutX="475.0" layoutY="292.0" mnemonicParsing="false" onAction="#onIniciarButtonClick" prefHeight="26.0" prefWidth="57.0" text="Iniciar " />
+                                <Label layoutX="31.0" layoutY="40.0" text="Indica el nombre de la partida" />
+                                <TextField layoutX="221.0" layoutY="35.0" prefHeight="26.0" prefWidth="158.0" />
+
+                                <Button alignment="BOTTOM_RIGHT" layoutX="535.0" layoutY="321.0" mnemonicParsing="false" onAction="#onIniciarButtonClick" prefHeight="26.0" prefWidth="54.0" text="Iniciar " />
+                        <Label layoutX="164.0" layoutY="93.0" prefHeight="27.0" prefWidth="230.0" text="Información sobre los elementos del juego" />
+                        <Label layoutX="52.0" layoutY="177.0" text="Individuo Básico" />
+                        <Label layoutX="52.0" layoutY="218.0" text="Individuo Normal" />
+                        <Label layoutX="417.0" layoutY="168.0" text="Biblioteca" />
+                        <Label layoutX="52.0" layoutY="265.0" text="Individuo Avanzado" />
+                        <Label layoutX="330.0" layoutY="168.0" text="Agua" />
+                        <Label layoutX="323.0" layoutY="236.0" text="Comida" />
+                        <Label layoutX="417.0" layoutY="236.0" text="Montañas" />
+                        <Label layoutX="331.0" layoutY="294.0" text="Pozo" />
+                        <Label layoutX="425.0" layoutY="294.0" text="Tesoro" />
+                        <ImageView fitHeight="30.0" fitWidth="26.0" layoutX="165.0" layoutY="175.0">
+                           <image>
+                              <Image url="@../../../Imagenes/IndividuoBasico.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="35.0" fitWidth="24.0" layoutX="164.0" layoutY="216.0">
+                           <image>
+                              <Image url="@../../../Imagenes/IndividuoNormal.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="32.0" fitWidth="23.0" layoutX="164.0" layoutY="263.0">
+                           <image>
+                              <Image url="@../../../Imagenes/IndividuoAvanzado.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="329.0" layoutY="190.0">
+                           <image>
+                              <Image url="@../../../Imagenes/Agua-Recursos.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="32.0" fitWidth="34.0" layoutX="425.0" layoutY="191.0">
+                           <image>
+                              <Image url="@../../../Imagenes/Biblioteca-Recursos.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="34.0" layoutX="327.0" layoutY="255.0">
+                           <image>
+                              <Image url="@../../../Imagenes/Comida-Recursos.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="98.0" layoutY="142.0" text="Individuos" />
+                        <Label layoutX="370.0" layoutY="142.0" text="Recursos" />
+                        <ImageView layoutX="423.0" layoutY="254.0">
+                           <image>
+                              <Image url="@../../../Imagenes/Montanas-Recursos.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="51.0" fitWidth="50.0" layoutX="319.0" layoutY="312.0">
+                           <image>
+                              <Image url="@../../../Imagenes/Pozo-Recursos.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="423.0" layoutY="309.0">
+                           <image>
+                              <Image url="@../../../Imagenes/Tesoro-Recursos.png" />
+                           </image>
+                        </ImageView>
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
+
             </tabs>
         </TabPane>
     </children>

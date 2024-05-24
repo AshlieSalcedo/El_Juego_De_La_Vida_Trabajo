@@ -1,12 +1,15 @@
 package org.example.el_juego_de_la_vida;
 
+import Modelo.Tablero;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Slider;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
 
@@ -20,10 +23,8 @@ public class ConfiguracionController {
     @FXML
     private Slider sliderM;
 
-    @FXML
-    protected void onIniciarButtonClick() {
-        showTablero((int) sliderN.getValue(), (int) sliderM.getValue());
-    }
+
+
 
     private void showTablero(int n, int m) {
         try {
@@ -42,4 +43,9 @@ public class ConfiguracionController {
             e.printStackTrace();
         }
     }
+    @FXML
+    private void onIniciarButtonClick() {
+        showTablero((int) sliderN.getValue(), (int) sliderM.getValue());
+    }
+
 }
