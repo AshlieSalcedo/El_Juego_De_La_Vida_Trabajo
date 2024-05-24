@@ -13,6 +13,7 @@ public abstract class Recurso {
     private int posM;
     private static int contadorID = 0;
     private int ID;
+    private static double probZ;
 
     public Recurso(int posN, int posM, Image imagen) {
         this.imagen = imagen;

@@ -1,5 +1,6 @@
 package org.example.el_juego_de_la_vida;
 
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,7 +28,7 @@ public class HelloController {
             configuracion.setScene(new Scene(root));
             configuracion.initModality(Modality.APPLICATION_MODAL);
             configuracion.initOwner(welcomeText.getScene().getWindow());
-            configuracion.showAndWait();
+            configuracion.show();
         } catch (IOException e) {
             e.printStackTrace();
         }

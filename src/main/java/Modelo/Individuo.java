@@ -17,10 +17,10 @@ public abstract class Individuo {
     private double reproduccion;
     private double clon;
 
-    public Individuo(int posN, int posM, double reproduccion, double clon, Image imagen) {
+    public Individuo(int posN, int posM, double reproduccion, double clon, int turnoVida, Image imagen) {
         this.posN = posN;
         this.posM = posM;
-        this.turnoVida = 3;
+        this.turnoVida = turnoVida;
         this.reproduccion = reproduccion;
         this.clon = clon;
         this.ID = ++contadorID;
@@ -36,7 +36,6 @@ public abstract class Individuo {
             turnoVida--;
             reproduccion= reproduccion-0.1;
             clon=clon-0.1;
-            mover(celda);
         }
         return resultado;
     }

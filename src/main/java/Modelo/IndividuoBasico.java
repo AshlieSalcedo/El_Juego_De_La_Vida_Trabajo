@@ -8,8 +8,8 @@ import java.util.Random;
 
 public class IndividuoBasico extends Individuo{
 
-    public IndividuoBasico( int posN, int posM, double reproduccion, double clon) {
-        super(posN, posM, reproduccion, clon,new Image(IndividuoBasico.class.getResource("/imagenes/IndividuoBasico.png").toExternalForm()));
+    public IndividuoBasico( int posN, int posM, double reproduccion, double clon,int turnoVida) {
+        super(posN, posM, reproduccion, clon,turnoVida,new Image(IndividuoBasico.class.getResource("/imagenes/IndividuoBasico.png").toExternalForm()));
     }
     public Casilla calcularRuta(ListaEnlazada matriz){
         int M = this.getPosM();

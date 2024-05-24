@@ -28,6 +28,7 @@
             <Button fx:id="stopButton" disable="true" text="Stop" />
             <Button fx:id="startGameButton" onAction="#onStartGameButtonClick" text="Iniciar Juego" />
             <Label fx:id="timerLabel" text="Time: 0 seconds" />
+
         </HBox>
     </bottom>
 </BorderPane>
