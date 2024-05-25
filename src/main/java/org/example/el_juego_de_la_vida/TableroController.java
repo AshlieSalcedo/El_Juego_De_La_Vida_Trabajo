@@ -242,6 +242,7 @@ private void agregarRecurso(Recurso recurso, Rectangle rect) {
 
 }
 
+
 @FXML
 private void onPauseButtonClick() {
     juegoPausado = true;
@@ -264,18 +265,22 @@ private void mostrarRecursos(Rectangle rect, double screenX, double screenY) {
         for (int j = 0; j < copia.getNumeroElementos(); j++) {
             Recurso recurso = (Recurso) copia.getElemento(j).getData();
             MenuItem menuItem = new MenuItem(recurso.getClass().getSimpleName() + " - ID: " + recurso.getID());
+            int nRecurso = recurso.getPosN();
+            int mRecurso = recurso.getPosM();
+            Casilla casillaRecurso = tablero.getCasilla(nRecurso,mRecurso);
 
-            // Configura el evento para cada MenuItem
-            menuItem.setOnAction(event -> {
-              //agregar nuevo recurso en la nueva celda y eliminar ese recurso de la antigua celda
+            menuItem.setOnAction(event -> {int posRecurso= casillaRecurso.buscarPosicionRecursoPorID(recurso.getID());
+              casillaRecurso.getListaRecursos().del(posRecurso);
+              agregarRecurso(recurso, rect);
+
             });
 
-            // Agrega el MenuItem al menú contextual
+
             contextMenu.getItems().add(menuItem);
         }
     }
 
-    // Muestra el menú contextual en la posición donde se mostró el menú 2
+
     contextMenu.show(rect, screenX, screenY);
 }
 

@@ -1,6 +1,7 @@
 package Modelo;
 
 import Estructuras.Enlazada.ListaEnlazada;
+import Recurso.*;
 
 public class Casilla {
     private int posN;
@@ -31,6 +32,15 @@ public class Casilla {
             listaIndividuos.del(menorIndPos);
         }
         return resultado;
+    }
+    public int buscarPosicionRecursoPorID(int id) {
+        for (int i = 0; i < listaRecursos.getNumeroElementos(); i++) {
+            Recurso recurso = (Recurso) listaRecursos.getElemento(i).getData();
+            if (recurso.getID() == id) {
+                return i; // Devolver el índice del recurso con el ID dado
+            }
+        }
+        return -1; // Devolver -1 si no se encuentra el recurso con el ID dado
     }
 
     public int getPosN() {
